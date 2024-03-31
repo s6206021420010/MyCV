@@ -9,7 +9,7 @@
     <hr>
     <a-row>
         <a-col :span="12">
-            <img src="./assets/retro.png" alt="">
+            <img src="../assets/retro.png" alt="">
         </a-col>
         <a-col :span="12">
             <div class="pt-4 ">
