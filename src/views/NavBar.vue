@@ -1,7 +1,7 @@
 <template>
 <a-layout>
     <a-layout-sider breakpoint="lg" collapsed-width="0" @collapse="onCollapse" @breakpoint="onBreakpoint">
-        <div class="logo d-flex align-items-center"><img src="src/assets/logo.jpg" class="p-3" style="width: 200px; border-radius: 20px;" alt=""></div>
+        <div class="logo d-flex align-items-center"><img src="./assets/logo.jpg" class="p-3" style="width: 200px; border-radius: 20px;" alt=""></div>
         <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
             <a-menu-item key="1">
                 <user-outlined />
