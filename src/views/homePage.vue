@@ -1,6 +1,6 @@
 <template>
-<div @scroll="handleScroll" style="height: 100vh" class="overflow-auto">
-    <img src="https://i.postimg.cc/3RZ6bhDS/img-2.jpg" v-if="score > 250" alt="" style="position: absolute; top: 10%; right: 5%; width: 300px; z-index: 999">
+<!-- <div @scroll="handleScroll" style="height: 100vh" class="overflow-auto"> -->
+<div @scroll="handleScroll" class="overflow-auto" style="height: 100vh">
     <div>
         <span class=" fs-1 fw-bold">
             <font-awesome-icon icon="fa-solid fa-house" />My Profile
@@ -18,6 +18,8 @@
                     <span class="fs-3 fw-bold ">Phone Number : <span class="fw-normal">092-7604466</span></span>
                     <span class="fs-3 fw-bold ">Age : <span class="fw-normal">26</span></span>
                     <span class="fs-3 fw-bold ">Current Address : <span class="fw-normal">Chaengwattana</span></span>
+                    <hr class="my-3">
+
                     <div class="d-flex mt-3">
                         <button class="button" @click="Tester()">
                             <span class="button_lg">
@@ -30,7 +32,7 @@
                                 </span>
                             </span>
                         </button>
-                        <button class="button ms-2">
+                        <button class="button ms-2" @click="linkin()">
                             <span class="button_lg">
                                 <span class="button_sl"></span>
                                 <span class="button_text ">
@@ -46,6 +48,56 @@
             </div>
         </a-col>
     </a-row>
+    <a-card>
+        <div class="d-flex flex-column rounded-3 p-3 ">
+            <span class="fs-3 fw-bold ">EDUCATION </span>
+            <a-row class="mt-3">
+                <a-col :span="3">
+                <Transition>
+                    <img v-if="score > 250" src="../assets/Seal_of_KMUTNB.svg.png" alt="" style="width: 150px">
+                </Transition>
+                </a-col>
+                <a-col class="d-flex flex-column">
+                    <span class="fs-5 mt-2 fw-normal text-nowrap fw-bold">KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK</span>
+                    <span class="fs-5 fw-normal text-nowrap">Jun 2019 - Jun 2022</span>
+                    <span class="fs-5 fw-normal text-nowrap">- Information Technology</span>
+                    <span class="fs-5 fw-normal text-nowrap">- GPA: 2.56</span>
+                </a-col>
+            </a-row>
+            <a-row class="mt-3">
+                <a-col :span="3">
+                <Transition>
+                    <img v-if="score > 250" src="../assets/images.png" alt="" style="width: 150px">
+                </Transition>
+                </a-col>
+                <a-col class="d-flex flex-column">
+                    <span class="fs-5 mt-2 fw-normal text-nowrap fw-bold">SUPHANBURI TECHNICAL CALLEGE INFORMATION TECHNOLOGY</span>
+                    <span class="fs-5 fw-normal text-nowrap">Jun 2017 - Jun 2018</span>
+                    <span class="fs-5 fw-normal text-nowrap">- Information Technology</span>
+                    <span class="fs-5 fw-normal text-nowrap">- GPA: 2.89</span>
+                </a-col>
+            </a-row>
+
+            <hr class="my-3">
+            <span class="fs-3 fw-bold">EXPERIENCE</span>
+            <span class="fs-5 mt-2 fw-normal text-nowrap fw-bold">The primer Developer</span>
+            <span class="fs-5 fw-normal text-nowrap">Jun 2023 - Present | <span class="text-success">Front-end Developer</span></span>
+            <span class="fs-5 fw-normal d-flex align-items-center"> <CaretRightOutlined />  Rajavej Hospital Bangkok: Developed front-end systems for Rajavej Hospital using HTML, Bootstrap, and VueJS.</span>
+            <span class="fs-5 fw-normal d-flex align-items-center"> <CaretRightOutlined />  National Cancer Institute: Designed front-end systems for the National Cancer Institute using HTML, Bootstrap, and VueJS. </span>
+            <span class="fs-5 fw-normal d-flex align-items-center"> <CaretRightOutlined />  Political Party: Took responsibility for developing front-end systems for a political party using HTML,Bootstrap, and VueJS.</span>
+            <!-- TODO: -->
+            <span class="fs-5 mt-2 fw-normal text-nowrap fw-bold">L&E manufacturing</span>
+            <span class="fs-5 fw-normal text-nowrap">Sep 2022 - Jun 2023 | <span class="text-primary">Web Developer</span></span>
+            <span class="fs-5 fw-normal d-flex align-items-center"> <CaretRightOutlined /> Collaborate in the development of Enterprise Resource Planning (ERP) systems.</span>
+            <span class="fs-5 fw-normal d-flex align-items-center"> <CaretRightOutlined />  Participate in the development of payroll calculation systems.</span>
+            <span class="fs-5 fw-normal d-flex align-items-center"> <CaretRightOutlined />  Take responsibility for developing employee fingerprint scanning systems.</span>
+            <span class="fs-5 fw-normal d-flex align-items-center"> <CaretRightOutlined />  Provide support and troubleshoot various issues for employees and users within the company.</span>
+            <!-- TODO: -->
+            <span class="fs-5 mt-2 fw-normal text-nowrap fw-bold">TELECORP Co.,LTD.</span>
+            <span class="fs-5 fw-normal text-nowrap">Jan 2021 - April 2021 | <span class="text-primary">Intern</span></span>
+            <span class="fs-5 fw-normal d-flex align-items-center"> <CaretRightOutlined />  I also was working in the Developer departments using JavaScript , HTML , Tailwind for front-end management and using React , Lalavel</span>
+        </div>
+    </a-card>
     <div>
     </div>
 </div>
@@ -55,7 +107,8 @@
 import {
     GithubOutlined,
     LinkedinOutlined,
-    MailOutlined
+    MailOutlined,
+    CaretRightOutlined
 } from '@ant-design/icons-vue'
 export default {
     data() {
@@ -64,8 +117,11 @@ export default {
         }
     },
     methods: {
+        linkin() {
+            window.open('https://www.linkedin.com/in/taratep-kerdboon-a0b46826b/', '_blank');
+        },
         Tester() {
-            alert('Hello World');
+            window.open('https://github.com/s6206021420010', '_blank');
         },
         handleScroll(event) {
             console.log('Scroll position:', event.target.scrollTop);
@@ -75,14 +131,23 @@ export default {
     components: {
         GithubOutlined,
         LinkedinOutlined,
-        MailOutlined
+        MailOutlined,
+        CaretRightOutlined
     }
 }
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
 
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 .button {
     -moz-appearance: none;
     -webkit-appearance: none;
