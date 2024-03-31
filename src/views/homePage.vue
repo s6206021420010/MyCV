@@ -19,7 +19,7 @@
                     <span class="fs-3 fw-bold ">Age : <span class="fw-normal">26</span></span>
                     <span class="fs-3 fw-bold ">Current Address : <span class="fw-normal">Chaengwattana</span></span>
                     <div class="d-flex mt-3">
-                        <button class="button">
+                        <button class="button" @click="Tester()">
                             <span class="button_lg">
                                 <span class="button_sl"></span>
                                 <span class="button_text ">
@@ -64,6 +64,9 @@ export default {
         }
     },
     methods: {
+        Tester() {
+            alert('Hello World');
+        },
         handleScroll(event) {
             console.log('Scroll position:', event.target.scrollTop);
             this.score = event.target.scrollTop
