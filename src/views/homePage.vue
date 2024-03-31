@@ -52,9 +52,9 @@
         <div class="d-flex flex-column rounded-3 p-3 ">
             <span class="fs-3 fw-bold ">EDUCATION </span>
             <a-row class="mt-3">
-                <a-col :span="3">
+                <a-col :span="4">
                 <Transition>
-                    <img v-if="score > 250" src="../assets/Seal_of_KMUTNB.svg.png" alt="" style="width: 150px">
+                    <img v-if="score > 260" src="../assets/Seal_of_KMUTNB.svg.png" alt="" style="width: 150px">
                 </Transition>
                 </a-col>
                 <a-col class="d-flex flex-column">
@@ -65,9 +65,9 @@
                 </a-col>
             </a-row>
             <a-row class="mt-3">
-                <a-col :span="3">
+                <a-col :span="4">
                 <Transition>
-                    <img v-if="score > 250" src="../assets/images.png" alt="" style="width: 150px">
+                    <img v-if="score > 260" src="../assets/images.png" alt="" style="width: 150px">
                 </Transition>
                 </a-col>
                 <a-col class="d-flex flex-column">
@@ -141,7 +141,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 
 .v-enter-from,
